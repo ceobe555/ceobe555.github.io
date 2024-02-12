@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tudou {
+            position: relative;
+            width: 480px;
+            height: 270px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+        .tudou img {
+            width: 100%;
+            height: 100%;
+        }
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4) url(images/icon/search1.jpg) no-repeat center;
+        }
+        /* 当鼠标经过盒子时，让盒子里的遮罩层显示出来  */
+        .tudou:hover .mask {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tudou">
+        <div class="mask"></div>
+        <img src="images/background/ling.jpg" alt="">
+    </div>
+</body>
+</html>
