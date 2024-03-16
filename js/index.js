@@ -37,35 +37,46 @@ window.addEventListener('load', function() {
     ul.appendChild(first);
 
     var num = 0, circle = 0;
+    var flag = true; // 节流阀
     arrow_r.addEventListener('click', function() {
-        if (num == ul.children.length - 1) {
-            num = 0;
-            ul.style.left = 0;
+        if (flag) {
+            flag = false;
+            if (num == ul.children.length - 1) {
+                num = 0;
+                ul.style.left = 0;
+            }
+            num++;
+            animate(ul, -num * focuswidth, function() {
+                flag = true; // 打开节流阀
+            });
+            circle++;
+            if (circle == ol.children.length) {
+                circle = 0;
+            }
+            circleChange();
         }
-        num++;
-        animate(ul, -num * focuswidth);
-        circle++;
-        if (circle == ol.children.length) {
-            circle = 0;
-        }
-        circleChange();
     })
     arrow_l.addEventListener('click', function() {
-        // num %= ul.children.length;
-        // 实现无缝滚动
-        // 如果移动到了最后一张复制的图片，此时要快速恢复需要令ul的left为0
-        if (num == 0) {
-            num = ul.children.length - 1;
-            ul.style.left = -num * focuswidth + 'px';
+        if (flag) {
+            flag = false;
+            // num %= ul.children.length;
+            // 实现无缝滚动
+            // 如果移动到了最后一张复制的图片，此时要快速恢复需要令ul的left为0
+            if (num == 0) {
+                num = ul.children.length - 1;
+                ul.style.left = -num * focuswidth + 'px';
+            }
+            num--;
+            animate(ul, -num * focuswidth, function() {
+                flag = true;
+            });
+            // 8.点击右侧按钮，小圆圈跟着一起变化
+            circle--;
+            if (circle < 0) {
+                circle = ol.children.length - 1;
+            }
+            circleChange();
         }
-        num--;
-        animate(ul, -num * focuswidth);
-        // 8.点击右侧按钮，小圆圈跟着一起变化
-        circle--;
-        if (circle < 0) {
-            circle = ol.children.length - 1;
-        }
-        circleChange();
     });
     function circleChange() {
         for (var i = 0; i < ol.children.length; i++) {
@@ -77,4 +88,18 @@ window.addEventListener('load', function() {
     var timer = setInterval(function() {
         arrow_r.click();
     }, 2000);
+
+    // goBack返回顶部功能
+    $(this).scroll(function() {
+        if (window.scrollY > 400) {
+            $(".goBack").stop().show();
+        } else {
+            $(".goBack").stop().hide();
+        }
+    })
+    $(".goBack").click(function() {
+        $("body, html").stop().animate({
+            scrollTop: 0
+        });
+    });
 })
