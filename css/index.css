@@ -1,0 +1,322 @@
+/* slider-bar start */
+.slider-bar {
+    position: fixed;
+    right: 0;
+    top: 400px;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+.slider-bar .goBack {
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #e3e5e7;
+    cursor: pointer;
+}
+.slider-bar .goBack::after {
+    font-family: 'icomoon';
+    content: '\e917';
+    color: #999;
+    font-size: 40px;
+    line-height: 50px;
+}
+/* slider-bar end */
+/* header start  */
+.header {
+    top: 0;
+    height: 100px;
+    background-color: #f3f5f7;
+    background: url(../images/background/2024020702.png) no-repeat top;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.header .logo {
+    float: left;
+    margin-top: -25px;
+    width: 150px;
+    height: 100px;
+}
+.header .logo img {
+    width: 100px;
+} 
+.header .nav {
+    float: left;
+    margin-left: 60px;
+}
+.header .nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+.header .nav ul li a {
+    display: block;
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #050505;
+}
+.header .nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+.header input[type=search] {
+    width: 350px;
+    height: 50px;
+    margin-left: 70px;
+    border: 1px solid #00a4ff;
+    border-radius: 25px;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.header .search {
+    position: relative;
+    float: left;
+}
+.header .search::after {
+    position: absolute;
+    right: 15px;
+    font-family: 'icomoon';
+    content: '\e986';
+    color: #00a4ff;
+    font-size: 18px;
+    line-height: 50px;
+}
+.header .user {
+    float: right;
+    line-height: 50px;
+    margin-right: 50px;
+    font-size: 14px;
+    color: #666;
+}
+.header .user img {
+    width: 50px;
+    border-radius: 50%;
+}
+/* header end  */
+/* banner start  */
+.banner {
+    height: 400px;
+    margin-top: 20px;
+    /* background-color: #fff; */
+}
+.banner .w {
+    position: relative;
+    height: 400px;
+    /* background: url(images/background/april.jpg) no-repeat center; */
+}
+.banner .w .subnav {
+    float: left;
+    width: 200px;
+    height: 400px;
+    background: rgba(0, 0, 0, .3);
+}
+.banner .w .subnav ul li {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+.banner .w .subnav ul li::after {
+    position: absolute;
+    right: 15px;
+    font-family: 'icomoon';
+    content: '\e916';
+    color: #fff;
+    font-size: 18px;
+    line-height: 50px;
+}
+.banner .w .subnav ul li a {
+    font-size: 16px;
+    color: #fff;
+}
+.banner .w .subnav ul li a:hover {
+    color: #00a4ff;
+}
+.banner .focus {
+    position: relative;
+    float: left;
+    margin: 0 5px;
+    width: 720px;
+    height: 400px;
+    overflow: hidden;
+}
+.banner .focus ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+}
+.banner .focus ul li {
+    float: left;
+}
+.banner .focus ul li img {
+    width: 720px;
+}
+.arrow-l,
+.arrow-r {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 24px;
+    height: 40px;
+    background: rgba(0, 0, 0, .3);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    z-index: 2;
+}
+.arrow-r {
+    right: 0;
+}
+.banner .focus .circle {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+}
+.banner .focus .circle li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.banner .focus .current {
+    background-color: #fff;
+}
+.banner .w .goal {
+    position: absolute;
+    right: 0;
+    width: 250px;
+    height: 400px;
+}
+.banner .goal .my-goal {
+    float: right;
+    width: 250px;
+    height: 150px;
+    border: 1px solid #e4e4e4;
+}
+.banner .goal .my-goal .goal-hd {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px dotted #e4e4e4;
+    padding: 0 15px;
+}
+.banner .goal .my-goal .goal-hd h5 {
+    float: left;
+    font-size: 14px;
+}
+.banner .goal .my-goal .goal-hd .more {
+    float: right;
+}
+.banner .goal .my-goal .goal-hd .more::after {
+    content: '\e916';
+    font-family: 'icomoon';
+}
+.banner .goal .my-goal .goal-bd {
+    padding: 5px 15px 0;
+}
+.banner .goal .my-goal .goal-bd ul li {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowarp;
+    text-overflow: ellipsis;
+}
+.banner .goal .goal-img img {
+    width: 250px;
+}
+/* banner end  */
+/* goods start  */
+.goods {
+    height: 60px;
+    background-color: #fff;
+    margin-top: 10px;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+    line-height: 60px;
+}
+.goods h3 {
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+.goods ul {
+    float: left;
+    margin-left: 30px;
+}
+.goods ul li {
+    float: left;
+}
+.goods ul li a {
+    padding: 0 30px;
+    font-size: 16px;
+    color: #050505;
+    border-left: 1px solid #ccc;
+}
+/* goods end  */
+/* favorite start  */
+.favorite {
+    margin-top: 30px;
+    background-color: #fff;
+}
+.favorite .f-head {
+    height: 50px;
+}
+.favorite .f-head h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+.favorite .f-head a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+}
+.favorite .f-body ul {
+    width: 1225px;
+}
+.favorite .f-body ul li {
+    position: relative;
+    float: left;
+    width: 230px;
+    height: 270px;
+    background-color: #fff;
+    margin: 35px;
+    margin-bottom: 15px;
+}
+.favorite .f-body ul li:hover {
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+}
+.favorite .f-body ul li a img {
+    width: 100%;
+}
+.favorite .f-body ul li a h4 {
+    margin: 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+.favorite .f-body ul li a .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+/* favorite end  */
+.footer {
+    height: 400px;
+    color: #fff;
+}
+.footer .w {
+    padding-top: 40px;
+}
